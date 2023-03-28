@@ -1,0 +1,14 @@
+I assume most of you have hear of binary search so I will keep this section short. Binary search is a of searching a list within 
+O(log(n)) time complexity. Note: when log() is referenced in this I am refering to log base 2. It is an extremely efficient 
+algorithm to find an element in a list with one caveat, the list must be sorted. 
+
+How much faster is this than a linear search? Assume it takes 1 millisecond each time we read an element in the array (it is much less 
+reality). for an array of 8 elements, a linear search will take 8ms and a binary seach will only take 3ms. This is faster but not by 
+much. Now lets assume the array has 16,777,216 elements. Linear search will take 16,777,216ms or about 4.7 hours. In contrast, binary 
+search will only take 24ms. Here the advantage becomes more apparent.
+
+How does a binary search work? To start, a binary search looks at the middle element in the array. If the element is to the target value, then we just return
+the value. Otherwise, the array being sorted comes into play. If our target value is greater than the middle element then we 
+know it must be to the right of the middle element. If it is less than the target it must be to the left. With this knowledge 
+we now only need to search one half of the array. If we repeatedly do this, we can cut half of the remaining array out each
+iteration. 
