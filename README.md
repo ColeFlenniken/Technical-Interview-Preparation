@@ -1,2 +1,4 @@
 # Technical-Interview-Preparation
 A  library containing all common topics necessary to ace your SWE interviews with a focus on learning through doing. Currently in development so many topics are not present yet.
+
+This repository has the goal of being the #1 free aid in preparing students and new grads for technical interviews. The repository is organized by topic. Within each topic is a document devoted to an easy to understand overview of said topic. In addition, more specific concepts and algorithms will be housed in their own documents. In addition, a folder labeled "Problems" will also be housed in the main topic folder. This folder will have folders that correspond to the name of each document in the parent folder. Inside these folders are the unique problems and solutions. This allows practice by broad topic or by specific algorithm.  
