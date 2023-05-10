@@ -1,5 +1,5 @@
 I assume most of you have hear of binary search so I will keep this section short. Binary search is a of searching a list within 
-O(log(n)) time complexity. Note: when log() is referenced in this I am refering to log base 2. It is an extremely efficient 
+O(log(n)) time complexity. Note: when log() is referenced in this I am typically refering to log base 2. It is an efficient 
 algorithm to find an element in a list with one caveat, the list must be sorted. 
 
 How much faster is this than a linear search? Assume it takes 1 millisecond each time we read an element in the array (it is much less 
@@ -12,3 +12,7 @@ the value. Otherwise, the array being sorted comes into play. If our target valu
 know it must be to the right of the middle element. If it is less than the target it must be to the left. With this knowledge 
 we now only need to search one half of the array. If we repeatedly do this, we can cut half of the remaining array out each
 iteration. 
+
+Binary search can also appear in a less traditional fashion. The list must be sorted but, sorted does not always refer to ordering elements in increasing value. 
+For example, lets say that we have a list of integers paired with another identical integer exept for one integer missing its pair (ex. [5,5,6,1,1,3,3,2,2]). 
+Binary search can be used to find the stand alone element, six in this case. 
