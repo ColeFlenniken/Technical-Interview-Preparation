@@ -1,1 +1,11 @@
+Given an integer array of size n which is sorted in increassing order and a target integer, return the index of the target integer or -1 if the target is not present in the array. THe search must be completed in O(log n) time.
 
+Ex. arr = [0,3,5,7,18,19], target = 3. Return 1 as the value 3 is at index 1 of the array.
+
+Ex. arr = [4,7,8,10,22,50], target = 2. Return -1 as 2 is not a value within the array.
+
+Constraints:
+0 < n < 1,000,000
+-10^6 < arr[i] < 10^6 
+arr is sorted in increasing order
+arr contains distinct integers
