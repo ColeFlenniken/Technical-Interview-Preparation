@@ -1,0 +1,17 @@
+int main(){
+    int pivot, left = 0, right = nums.size() - 1;
+    //while there are potential spaces for target to be
+    while (left <= right) {
+        //midpoint of slice of array that target can be in
+        pivot = left + (right - left) / 2;
+        if (nums[pivot] == target) return pivot;
+        //halve the array for the next iteration
+        if (target < nums[pivot]){
+            right = pivot - 1;
+        }else{
+            left = pivot + 1;
+        } 
+    }
+    //only executes if target was not found
+    return -1;
+}
