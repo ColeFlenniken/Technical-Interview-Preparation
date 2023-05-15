@@ -1,1 +1,23 @@
+At first this may not seem like a binary search question until we see that the solution must run in O(logn) time. The linear solution would be to search through the array until we find a number that does not have an equivilent neibour. This will run in O(n). To find a O(logn) solution we need to devise a way to check whether we need to search to the right or the left of any given number and cut the remaining subarray size roughly in half every iteration. To do this we can notice that if the single element has not yet appeared, the first number in a pair will be in an even index and the second will be in an odd index. When the single element appears, it offsets this pattern so that now the first number in a pair is an odd index and a second number is an even index. This this means that if we pick an index at random and find it has a corresponding element, then we can check the index of the first element in the pair and determine whether the single element has occured yet. For example, if we find a pair on index 30 and 31 of a size 60 array then since the first element is on an even index and as such the single element has not yet occured. Now we only need to look at the half of the array to the right of this pair. If we repeatedly do this and cut off half of the array each iteration then, we can successfully find the single element in O(logn) time.
 
+
+
+
+
+int singleNonDuplicate(vector<int>& nums) {
+    //left and right are the bound of the subarray, currently the whole array
+    int left = 0, right = nums.size() - 1;
+    
+    while(left < right){
+        int mid = (left + right)/2;
+        //checks to see if the single element is on the right of the array
+        //basically seeing if the first index of a element pair is even
+        //if so only look at the right subarray otherwise only look at the left subarray
+        if((mid % 2 == 0 && nums[mid] == nums[mid + 1]) || (mid % 2 == 1 && nums[mid] == nums[mid - 1]))
+            left = mid + 1;
+        else
+            right = mid;
+    }
+
+    return nums[left];
+}
